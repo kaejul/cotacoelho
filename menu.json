@@ -5,181 +5,423 @@
       "title": "Couvert na Telha",
       "type": "couvert",
       "couvertItems": [
-        { "name": "Azeitonas e Tremoços Marinadas à Cota" },
-        { "name": "Manteiga de Alho", "note": "caseira" },
-        { "name": "Mini Queijo fresco" },
-        { "name": "Pataniscas de Bacalhau", "sub": "e Pão" },
-        { "name": "Paté Sardinha", "note": "caseiro" }
+        {
+          "name": "Azeitonas Marinadas à Cota"
+        },
+        {
+          "name": "Manteiga de Alho Assado",
+          "note": "caseira"
+        },
+        {
+          "name": "Mini Queijo fresco"
+        },
+        {
+          "name": "Mini Salgadinhos"
+        },
+        {
+          "name": "Paté Sardinha",
+          "note": "caseiro",
+          "sub": "e Pão"
+        }
       ],
       "perPersonPrice": "5,5€",
-      "extra": { "name": "Extra Pataniscas de Bacalhau", "price": "0,9€" }
+      "extra": {
+        "name": "Extra Mini Salgadinhos",
+        "price": "0,75€"
+      }
     },
     {
       "id": "sopa",
       "title": "Sopa",
       "items": [
-        { "name": "Sopa do Cota Sá", "price": "3,5€" }
+        {
+          "name": "Sopa do Cota Sá",
+          "price": "3,5€"
+        }
       ]
     },
     {
       "id": "petiscos",
       "title": "Petiscos",
       "items": [
-        { "name": "Peixinhos da Horta", "price": "6,5€" },
-        { "name": "Tomatada à Cota", "price": null },
-        { "name": "Camarão à Guilho", "price": null },
-        { "name": "Bacalhau à Gomes Sá", "price": "5,5€" },
-        { "name": "Carne de Porco à Portuguesa", "price": null },
-        { "name": "Moelas", "price": "6,5€" },
-        { "name": "Pica-Pau", "price": "11€" },
-        { "name": "Ovos Rotos com Farinheira", "price": null },
-        { "name": "Ovos Mexidos com Farinheira", "price": "7€" }
+        {
+          "name": "Bacalhau à Gomes de Sá",
+          "price": "10€"
+        },
+        {
+          "name": "Perninhas de Rã",
+          "price": "8€"
+        },
+        {
+          "name": "Pica-pau de Novilho Angus",
+          "price": "11€"
+        },
+        {
+          "name": "Peixinhos da Horta",
+          "price": "5,5€"
+        },
+        {
+          "name": "Salada de Polvo à Lagareiro",
+          "price": "13€"
+        },
+        {
+          "name": "Moelas",
+          "price": "5,5€"
+        },
+        {
+          "name": "Ovos à Cota",
+          "price": "5,5€"
+        },
+        {
+          "name": "Ovos mexidos com Farinheira",
+          "price": "6€"
+        }
       ]
     },
     {
       "id": "bucha",
       "title": "Bucha",
       "items": [
-        { "name": "Prego de Novilho Angus", "price": "6€" },
-        { "name": "Bochecha", "price": "6€" },
-        { "name": "Bifana", "price": "4€" }
+        {
+          "name": "Prego de Novilho Angus",
+          "price": "6€"
+        },
+        {
+          "name": "Bochecha",
+          "price": "6€"
+        },
+        {
+          "name": "Bifana",
+          "price": "4€"
+        }
       ]
     },
     {
       "id": "nao-petisqueiros",
       "title": "Não Petisqueiros",
       "items": [
-        { "name": "Bife à Cota", "sub": "Novilho Angus", "price": "15€" }
+        {
+          "name": "Bitoque à Cota",
+          "sub": "Novilho Angus",
+          "price": "15€"
+        }
       ]
     },
     {
       "id": "acompanhamentos",
       "title": "Acompanhamentos",
       "items": [
-        { "name": "Batata Frita Caseira", "price": "3,5€" },
-        { "name": "Arroz Branco", "price": "3€" },
-        { "name": "Arroz de Tomate", "price": "3,5€" },
-        { "name": "Salada de Pimentos", "price": "4€" },
-        { "name": "Salada Mista", "price": "4€" },
-        { "name": "Cesto de Pão", "price": "3€" }
+        {
+          "name": "Batata Frita Caseira",
+          "price": "3,5€"
+        },
+        {
+          "name": "Arroz Branco",
+          "price": "2,5€"
+        },
+        {
+          "name": "Arroz de Tomate",
+          "price": "3€"
+        },
+        {
+          "name": "Salada de Pimentos",
+          "price": "3,5€"
+        },
+        {
+          "name": "Salada Mista",
+          "price": "3,5€"
+        },
+        {
+          "name": "Pão Torrado",
+          "price": "3,5€"
+        },
+        {
+          "name": "Cesto de Pão",
+          "price": "3€"
+        }
       ]
     },
     {
       "id": "sobremesa",
       "title": "Sobremesa",
       "items": [
-        { "name": "Pudim de Pão", "price": "4€" },
-        { "name": "Sericaia", "price": "4€" },
-        { "name": "Doce à Cota", "price": "3,5€" }
+        {
+          "name": "Mousse de Chocolate",
+          "price": "3,5€"
+        },
+        {
+          "name": "Sericaia",
+          "price": "4€"
+        },
+        {
+          "name": "Doce à Cota",
+          "price": "3,5€"
+        }
       ]
     },
     {
       "id": "refrigerantes",
       "title": "Refrigerantes",
       "items": [
-        { "name": "Coca Cola", "price": "2,5€" },
-        { "name": "Coca Cola Zero", "price": "2,5€" },
-        { "name": "Fuze Tea Limão", "price": "2,2€" },
-        { "name": "Fuze Tea Pêssego", "price": "2,2€" },
-        { "name": "Fanta Laranja", "price": "2,5€" },
-        { "name": "Sprite", "price": "2,5€" }
+        {
+          "name": "Coca Cola",
+          "note": "35cl",
+          "price": "2,5€"
+        },
+        {
+          "name": "Coca Cola Zero",
+          "note": "35cl",
+          "price": "2,5€"
+        },
+        {
+          "name": "Fuze Tea Limão",
+          "note": "30cl",
+          "price": "2,2€"
+        },
+        {
+          "name": "Fuze Tea Pêssego",
+          "note": "30cl",
+          "price": "2,2€"
+        },
+        {
+          "name": "Fanta Laranja",
+          "note": "35cl",
+          "price": "2,5€"
+        },
+        {
+          "name": "Sprite",
+          "note": "35cl",
+          "price": "2,5€"
+        }
       ]
     },
     {
       "id": "aguas",
       "title": "Águas",
       "items": [
-        { "name": "Água Luso", "note": "50cl", "price": "2€" },
-        { "name": "Água das Pedras", "note": "25cl", "price": "2€" },
-        { "name": "Água das Pedras Limão", "note": "25cl", "price": "2€" }
+        {
+          "name": "Água Luso",
+          "note": "50cl",
+          "price": "2€"
+        },
+        {
+          "name": "Água das Pedras",
+          "note": "25cl",
+          "price": "2€"
+        }
       ]
     },
     {
       "id": "cerveja-sidra",
       "title": "Cerveja e Sidra",
       "items": [
-        { "name": "Imperial", "note": "20cl", "price": "1,5€" },
-        { "name": "Caneca", "note": "40cl", "price": "3€" },
-        { "name": "Imperial Bohemia", "note": "30cl", "price": "2,5€" },
-        { "name": "Mini", "note": "25cl", "price": "1,9€" },
-        { "name": "Mini Preta", "note": "25cl", "price": "2€" },
-        { "name": "Bandida do Pomar", "note": "40cl", "price": "3,5€" },
-        { "name": "Cerveja s/ Álcool", "price": "1,9€" },
-        { "name": "Cerveja Panache", "price": "1,80€" }
+        {
+          "name": "Imperial",
+          "note": "20cl",
+          "price": "1,5€"
+        },
+        {
+          "name": "Caneca",
+          "note": "40cl",
+          "price": "3€"
+        },
+        {
+          "name": "Imperial Bohemia",
+          "note": "30cl",
+          "price": "2,5€"
+        },
+        {
+          "name": "Mini",
+          "note": "25cl",
+          "price": "1,9€"
+        },
+        {
+          "name": "Mini Preta",
+          "note": "25cl",
+          "price": "2€"
+        },
+        {
+          "name": "Bandida do Pomar",
+          "price": "3€"
+        },
+        {
+          "name": "Cerveja s/ Álcool",
+          "price": "1,9€"
+        },
+        {
+          "name": "Cerveja Panache",
+          "price": "1,8€"
+        }
       ]
     },
     {
       "id": "vinho-pressao",
       "title": "Vinho à Pressão",
       "items": [
-        { "name": "Jarro 75cl", "price": "8,5€" },
-        { "name": "Copo", "price": "3€" }
+        {
+          "name": "Jarro 75cl",
+          "price": "7,5€"
+        },
+        {
+          "name": "Copo",
+          "price": "2,7€"
+        }
       ]
     },
     {
       "id": "sangria",
       "title": "Sangria",
       "items": [
-        { "name": "Sangria Tinta", "note": "1lt", "price": "13€" },
-        { "name": "Sangria Branca", "note": "1lt", "price": "13€" }
+        {
+          "name": "Sangria Tinta",
+          "note": "1lt",
+          "price": "13€"
+        },
+        {
+          "name": "Sangria Branca",
+          "note": "1lt",
+          "price": "13€"
+        }
       ]
     },
     {
       "id": "tintos",
       "title": "Tintos",
       "items": [
-        { "name": "Vinho da Casa — copo", "price": "3,5€" },
-        { "name": "Vinho da Casa — jarro 75cl", "price": "10€" },
-        { "name": "Arcos do Marquês — garrafa", "sub": "Bairrada · Baga e Touriga Nacional", "price": "16€" },
-        { "name": "3 Folhas — garrafa", "sub": "Alentejo · Cab. Sauvignon, Aragonez, Touriga Nac., Trincadeira", "price": "17,5€" },
-        { "name": "Head Rock — garrafa", "sub": "Trás-os-Montes · Touriga Franca, Touriga Nac. e Tinta Roriz", "price": "18€" }
+        {
+          "name": "Vinho da Casa — copo",
+          "price": "3€"
+        },
+        {
+          "name": "Vinho da Casa — jarro 75cl",
+          "price": "9€"
+        },
+        {
+          "name": "Arcos do Marquês — garrafa",
+          "sub": "Bairrada 2019 · Baga e Touriga Nacional",
+          "price": "16€"
+        },
+        {
+          "name": "3 Folhas — garrafa",
+          "sub": "Alentejo 2022 · Cabernet Sauvignon, Aragonez, Touriga Nacional, Trincadeira",
+          "price": "17,5€"
+        },
+        {
+          "name": "Head Rock — garrafa",
+          "sub": "Trás-os-Montes 2017 · Touriga Franca, Touriga Nacional e Tinta Roriz",
+          "price": "18€"
+        }
       ]
     },
     {
       "id": "brancos",
       "title": "Brancos",
       "items": [
-        { "name": "Vinho da Casa — copo", "price": "3,5€" },
-        { "name": "Vinho da Casa — jarro 75cl", "price": "10€" },
-        { "name": "Qtª Pousada de Fora — garrafa", "sub": "Vinho Verde · Arinto e Loureiro", "price": "15€" },
-        { "name": "Cheda — garrafa", "sub": "Douro · Touriga Franca, Tinta Roriz, Touriga Nacional", "price": "16€" },
-        { "name": "Head Rock — garrafa", "sub": "Trás-os-Montes · Gouveio e Alvarinho", "price": "18€" }
+        {
+          "name": "Vinho da Casa — copo",
+          "price": "3€"
+        },
+        {
+          "name": "Vinho da Casa — jarro 75cl",
+          "price": "9€"
+        },
+        {
+          "name": "Qtª Pousada de Fora (Reserva)",
+          "sub": "Vinho Verde 2021 · Arinto e Loureiro",
+          "price": "15€"
+        },
+        {
+          "name": "Arcos do Marquês — garrafa",
+          "sub": "Bairrada 2019 · Maria Gomes e Bical",
+          "price": "16€"
+        },
+        {
+          "name": "Head Rock — garrafa",
+          "sub": "Trás-os-Montes 2020 · Gouveio e Alvarinho",
+          "price": "18€"
+        }
       ]
     },
     {
       "id": "rose",
       "title": "Rosé",
       "items": [
-        { "name": "Head Rock — garrafa", "sub": "Trás-os-Montes · Touriga Nacional e Alvarinho", "price": "18€" }
+        {
+          "name": "Head Rock — garrafa",
+          "sub": "Trás-os-Montes 2022 · Touriga Nacional e Alvarinho",
+          "price": "18€"
+        }
       ]
     },
     {
       "id": "espumante",
       "title": "Espumante",
       "items": [
-        { "name": "O Canto da Águia, brut — garrafa", "sub": "Bairrada · Maria Gomes e Bical", "price": "18,5€" }
+        {
+          "name": "O Canto da Águia, brut (Reserva) — garrafa",
+          "sub": "Bairrada 2021 · Maria Gomes e Bical",
+          "price": "18,5€"
+        }
       ]
     },
     {
       "id": "digestivos",
       "title": "Digestivos",
       "items": [
-        { "name": "Moscatel de Setúbal", "price": "3,5€" },
-        { "name": "Ginjinha", "price": "2€" },
-        { "name": "Vinho do Porto", "price": "3€" },
-        { "name": "Licores", "price": "3,5€" },
-        { "name": "Aguardente", "price": "5€" },
-        { "name": "Jameson", "price": "4,5€" },
-        { "name": "Bushmills", "price": "5€" },
-        { "name": "Ballantines", "price": "4,5€" }
+        {
+          "name": "Moscatel de Setúbal",
+          "price": "3,5€"
+        },
+        {
+          "name": "Ginjinha",
+          "price": "2€"
+        },
+        {
+          "name": "Vinho do Porto",
+          "price": "3€"
+        },
+        {
+          "name": "Licores",
+          "price": "3,5€"
+        },
+        {
+          "name": "Aguardente",
+          "price": "5€"
+        },
+        {
+          "name": "Jameson",
+          "price": "4,5€"
+        },
+        {
+          "name": "Bushmills",
+          "price": "5€"
+        },
+        {
+          "name": "Ballantines",
+          "price": "4,5€"
+        }
       ]
     },
     {
       "id": "cafetaria",
       "title": "Cafetaria",
       "items": [
-        { "name": "Café", "price": "1,2€" },
-        { "name": "Descafeinado", "price": "1,2€" }
+        {
+          "name": "Café",
+          "price": "1,2€"
+        },
+        {
+          "name": "Descafeínado",
+          "price": "1,2€"
+        },
+        {
+          "name": "Café Duplo",
+          "price": "2,4€"
+        },
+        {
+          "name": "Abatanado",
+          "price": "1,8€"
+        }
       ]
     }
   ]
