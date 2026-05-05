@@ -5,7 +5,7 @@
       "title": "Couvert na Telha",
       "type": "couvert",
       "couvertItems": [
-        { "name": "Azeitonas e Tremoços Marinadas à Cota" },
+        { "name": "Azeitonas e Tremoços Marinadas à Cota", "tags": [] },
         { "name": "Manteiga de Alho", "note": "caseira" },
         { "name": "Mini Queijo fresco" },
         { "name": "Pataniscas de Bacalhau", "sub": "e Pão" },
@@ -49,7 +49,7 @@
       "id": "nao-petisqueiros",
       "title": "Não Petisqueiros",
       "items": [
-        { "name": "Bife à Cota", "sub": "Novilho Angus", "price": "15€" }
+        { "name": "Bife à Cota", "sub": "Novilho Angus", "price": "15€", "tags": [] }
       ]
     },
     {
@@ -60,7 +60,7 @@
         { "name": "Arroz Branco", "price": "3€" },
         { "name": "Arroz de Tomate", "price": "3,5€" },
         { "name": "Salada de Pimentos", "price": "4€" },
-        { "name": "Salada Mista", "price": "4€" },
+        { "name": "Salada Mista", "price": "4€", "tags": [] },
         { "name": "Cesto de Pão", "price": "3€" }
       ]
     },
@@ -68,7 +68,7 @@
       "id": "sobremesa",
       "title": "Sobremesa",
       "items": [
-        { "name": "Pudim de Pão", "price": "4€" },
+        { "name": "Pudim de Pão", "price": "4€", "tags": [] },
         { "name": "Sericaia", "price": "4€" },
         { "name": "Doce à Cota", "price": "3,5€" }
       ]
