@@ -6,17 +6,11 @@
       "type": "couvert",
       "couvertItems": [
         {
-          "name": "Azeitonas Marinadas à Cota"
+          "name": "Azeitonas e tremoços Marinados à Cota"
         },
         {
-          "name": "Manteiga de Alho Assado",
+          "name": "Manteiga de Alho",
           "note": "caseira"
-        },
-        {
-          "name": "Mini Queijo fresco"
-        },
-        {
-          "name": "Mini Salgadinhos"
         },
         {
           "name": "Paté Sardinha",
@@ -24,11 +18,7 @@
           "sub": "e Pão"
         }
       ],
-      "perPersonPrice": "5,5€",
-      "extra": {
-        "name": "Extra Mini Salgadinhos",
-        "price": "0,75€"
-      }
+      "perPersonPrice": "5,5€"
     },
     {
       "id": "sopa",
@@ -45,36 +35,32 @@
       "title": "Petiscos",
       "items": [
         {
-          "name": "Bacalhau à Gomes de Sá",
-          "price": "10€"
+          "name": "Peixinhos da Horta",
+          "price": "7€"
         },
         {
-          "name": "Perninhas de Rã",
+          "name": "Bolinhas de Alheira",
+          "price": "8€"
+        },
+        {
+          "name": "Bacalhau à Gomes de Sá",
+          "price": "12€"
+        },
+        {
+          "name": "Moelas",
           "price": "8€"
         },
         {
           "name": "Pica-pau de Novilho Angus",
-          "price": "11€"
-        },
-        {
-          "name": "Peixinhos da Horta",
-          "price": "5,5€"
-        },
-        {
-          "name": "Salada de Polvo à Lagareiro",
-          "price": "13€"
-        },
-        {
-          "name": "Moelas",
-          "price": "5,5€"
+          "price": "11.5€"
         },
         {
           "name": "Ovos à Cota",
-          "price": "5,5€"
+          "price": "7€"
         },
         {
-          "name": "Ovos mexidos com Farinheira",
-          "price": "6€"
+          "name": "Ovos mexidos com farinheira",
+          "price": "7€"
         }
       ]
     },
@@ -84,15 +70,15 @@
       "items": [
         {
           "name": "Prego de Novilho Angus",
-          "price": "6€"
+          "price": "8€"
         },
         {
           "name": "Bochecha",
-          "price": "6€"
+          "price": "8€"
         },
         {
           "name": "Bifana",
-          "price": "4€"
+          "price": "6€"
         }
       ]
     },
@@ -101,7 +87,7 @@
       "title": "Não Petisqueiros",
       "items": [
         {
-          "name": "Bitoque à Cota",
+          "name": "Bife à Cota com batata frita caseira",
           "sub": "Novilho Angus",
           "price": "15€"
         }
@@ -117,15 +103,15 @@
         },
         {
           "name": "Arroz Branco",
-          "price": "2,5€"
-        },
-        {
-          "name": "Arroz de Tomate",
           "price": "3€"
         },
         {
-          "name": "Salada de Pimentos",
+          "name": "Arroz de Tomate",
           "price": "3,5€"
+        },
+        {
+          "name": "Salada de Pimentos",
+          "price": "4,5€"
         },
         {
           "name": "Salada Mista",
@@ -146,16 +132,16 @@
       "title": "Sobremesa",
       "items": [
         {
-          "name": "Mousse de Chocolate",
-          "price": "3,5€"
+          "name": "Doce à Cota",
+          "price": "4€"
         },
         {
           "name": "Sericaia",
           "price": "4€"
         },
-        {
-          "name": "Doce à Cota",
-          "price": "3,5€"
+	{
+          "name": "Pudim de Pão com cobertura de caramelo salgado",
+          "price": "4€"
         }
       ]
     },
@@ -165,32 +151,26 @@
       "items": [
         {
           "name": "Coca Cola",
-          "note": "35cl",
           "price": "2,5€"
         },
         {
           "name": "Coca Cola Zero",
-          "note": "35cl",
           "price": "2,5€"
         },
         {
           "name": "Fuze Tea Limão",
-          "note": "30cl",
           "price": "2,2€"
         },
         {
           "name": "Fuze Tea Pêssego",
-          "note": "30cl",
           "price": "2,2€"
         },
         {
           "name": "Fanta Laranja",
-          "note": "35cl",
           "price": "2,5€"
         },
         {
           "name": "Sprite",
-          "note": "35cl",
           "price": "2,5€"
         }
       ]
@@ -242,7 +222,8 @@
         },
         {
           "name": "Bandida do Pomar",
-          "price": "3€"
+          "note": "40cl",
+          "price": "3.5€"
         },
         {
           "name": "Cerveja s/ Álcool",
@@ -297,8 +278,8 @@
           "price": "9€"
         },
         {
-          "name": "Arcos do Marquês — garrafa",
-          "sub": "Bairrada 2019 · Baga e Touriga Nacional",
+          "name": "Cheda — garrafa",
+          "sub": "DOURO · Touriga Nacional, Touriga Franca, Tinta Roriz",
           "price": "16€"
         },
         {
@@ -408,10 +389,6 @@
       "items": [
         {
           "name": "Café",
-          "price": "1,2€"
-        },
-        {
-          "name": "Descafeínado",
           "price": "1,2€"
         },
         {
