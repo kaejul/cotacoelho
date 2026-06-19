@@ -6,7 +6,7 @@
       "type": "couvert",
       "couvertItems": [
         {
-          "name": "Azeitonas e tremoços Marinados à Cota"
+          "name": "Azeitonas e Tremoços Marinados à Cota"
         },
         {
           "name": "Manteiga de Alho",
@@ -14,8 +14,10 @@
         },
         {
           "name": "Paté Sardinha",
-          "note": "caseiro",
-          "sub": "e Pão"
+          "note": "caseiro"
+        },
+        {
+          "name": "Pão"
         }
       ],
       "perPersonPrice": "5,5€"
@@ -59,7 +61,7 @@
           "price": "7€"
         },
         {
-          "name": "Ovos mexidos com farinheira",
+          "name": "Ovos Mexidos com Farinheira",
           "price": "7€"
         }
       ]
@@ -87,7 +89,7 @@
       "title": "Não Petisqueiros",
       "items": [
         {
-          "name": "Bife à Cota com batata frita caseira",
+          "name": "Bife à Cota c/ Batata Frita Caseira",
           "sub": "Novilho Angus",
           "price": "15€"
         }
@@ -139,8 +141,9 @@
           "name": "Sericaia",
           "price": "4€"
         },
-	{
-          "name": "Pudim de Pão com cobertura de caramelo salgado",
+        {
+          "name": "Pudim de Pão",
+          "sub": "c/ cobertura de caramelo salgado",
           "price": "4€"
         }
       ]
@@ -188,6 +191,11 @@
           "name": "Água das Pedras",
           "note": "25cl",
           "price": "2€"
+        },
+         {
+          "name": "Água das Pedras Limão",
+          "note": "25cl",
+          "price": "2€"
         }
       ]
     },
@@ -227,7 +235,7 @@
         },
         {
           "name": "Cerveja s/ Álcool",
-          "price": "1,9€"
+          "price": "2€"
         },
         {
           "name": "Cerveja Panache",
@@ -284,12 +292,12 @@
         },
         {
           "name": "3 Folhas — garrafa",
-          "sub": "Alentejo 2022 · Cabernet Sauvignon, Aragonez, Touriga Nacional, Trincadeira",
+          "sub": "Alentejo · Cabernet Sauvignon, Aragonez, Touriga Nacional, Trincadeira",
           "price": "17,5€"
         },
         {
           "name": "Head Rock — garrafa",
-          "sub": "Trás-os-Montes 2017 · Touriga Franca, Touriga Nacional e Tinta Roriz",
+          "sub": "Trás-os-Montes · Touriga Franca, Touriga Nacional e Tinta Roriz",
           "price": "18€"
         }
       ]
@@ -308,17 +316,17 @@
         },
         {
           "name": "Qtª Pousada de Fora (Reserva)",
-          "sub": "Vinho Verde 2021 · Arinto e Loureiro",
+          "sub": "Vinho Verde · Arinto e Loureiro",
           "price": "15€"
         },
         {
           "name": "Arcos do Marquês — garrafa",
-          "sub": "Bairrada 2019 · Maria Gomes e Bical",
+          "sub": "Bairrada · Maria Gomes e Bical",
           "price": "16€"
         },
         {
           "name": "Head Rock — garrafa",
-          "sub": "Trás-os-Montes 2020 · Gouveio e Alvarinho",
+          "sub": "Trás-os-Montes · Gouveio e Alvarinho",
           "price": "18€"
         }
       ]
@@ -329,7 +337,7 @@
       "items": [
         {
           "name": "Head Rock — garrafa",
-          "sub": "Trás-os-Montes 2022 · Touriga Nacional e Alvarinho",
+          "sub": "Trás-os-Montes · Touriga Nacional e Alvarinho",
           "price": "18€"
         }
       ]
@@ -340,7 +348,7 @@
       "items": [
         {
           "name": "O Canto da Águia, brut (Reserva) — garrafa",
-          "sub": "Bairrada 2021 · Maria Gomes e Bical",
+          "sub": "Bairrada · Maria Gomes e Bical",
           "price": "18,5€"
         }
       ]
