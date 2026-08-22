@@ -85,17 +85,6 @@
       ]
     },
     {
-      "id": "nao-petisqueiros",
-      "title": "Não Petisqueiros",
-      "items": [
-        {
-          "name": "Bife à Cota c/ Batata Frita Caseira",
-          "sub": "Novilho Angus",
-          "price": "15€"
-        }
-      ]
-    },
-    {
       "id": "acompanhamentos",
       "title": "Acompanhamentos",
       "items": [
