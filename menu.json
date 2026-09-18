@@ -36,6 +36,10 @@
       "id": "petiscos",
       "title": "Petiscos",
       "items": [
+         {
+          "name": "Açorda à Alentejana",
+          "price": "6,5€"
+        },
         {
           "name": "Peixinhos da Horta",
           "price": "7€"
@@ -47,6 +51,10 @@
         {
           "name": "Salada de Camarão com Vinagrete de Manga e Lima",
           "price": "8€"
+        },
+        {
+          "name": "Camarão à Guilho",
+          "price": "9€"
         },
         {
           "name": "Bacalhau à Gomes de Sá",
@@ -105,12 +113,12 @@
           "price": "3,5€"
         },
         {
-          "name": "Salada de Pimentos",
-          "price": "4,5€"
+          "name": "Salada de Tomate",
+          "price": "4€"
         },
         {
           "name": "Salada Mista",
-          "price": "3,5€"
+          "price": "4€"
         },
         {
           "name": "Pão Torrado",
