@@ -36,20 +36,16 @@
       "id": "petiscos",
       "title": "Petiscos",
       "items": [
-         {
+        {
           "name": "Açorda à Alentejana",
           "price": "6,5€"
         },
         {
           "name": "Peixinhos da Horta",
-          "price": "7€"
-        },
-        {
-          "name": "Bolinhas de Alheira",
           "price": "8€"
         },
         {
-          "name": "Salada de Camarão com Vinagrete de Manga e Lima",
+          "name": "Bolinhas de Alheira",
           "price": "8€"
         },
         {
@@ -62,7 +58,7 @@
         },
         {
           "name": "Moelas",
-          "price": "8€"
+          "price": "9€"
         },
         {
           "name": "Pica-pau de Novilho Angus",
@@ -70,7 +66,7 @@
         },
         {
           "name": "Ovos à Cota",
-          "price": "7€"
+          "price": "8€"
         },
         {
           "name": "Ovos Mexidos com Farinheira",
@@ -109,8 +105,8 @@
           "price": "3€"
         },
         {
-          "name": "Arroz de Tomate",
-          "price": "3,5€"
+          "name": "Migas",
+          "price": "4€"
         },
         {
           "name": "Salada de Tomate",
@@ -197,7 +193,7 @@
           "note": "25cl",
           "price": "2€"
         },
-         {
+        {
           "name": "Água das Pedras Limão",
           "note": "25cl",
           "price": "2€"
@@ -244,6 +240,10 @@
         },
         {
           "name": "Cerveja Panache",
+          "price": "1,8€"
+        },
+        {
+          "name": "Cerveja Tango",
           "price": "1,8€"
         }
       ]
