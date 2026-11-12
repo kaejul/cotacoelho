@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Editar Ementa — Cota Coelho</title>
+<link rel="icon" type="image/png" href="favicon.png?v=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --amber: #E8920A;
+    --amber-deep: #C97A06;
+    --amber-light: #F5A830;
+    --amber-pale: #FCD27A;
+    --cream: #FEF3DC;
+    --cream-warm: #FDE8B8;
+    --brown-dark: #3A1F00;
+    --brown-mid: #6B3A0A;
+    --white: #FFFDF5;
+    --danger: #A8321E;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--brown-dark);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    min-height: 100vh;
+  }
+
+  .menu-wrapper { padding: clamp(2rem, 6vw, 4rem) 0 6rem; }
+
+  .menu-intro {
+    text-align: center;
+    padding: 0 clamp(1rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2.5rem);
+    border-bottom: 1.5px solid var(--amber-pale);
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .menu-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.61rem, 5.75vw, 2.53rem);
+    font-style: italic;
+    color: var(--amber-deep);
+    margin-bottom: 0.3em;
+  }
+  .menu-intro p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--brown-mid);
+    opacity: 0.75;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+  }
+  @media (min-width: 700px)  { .menu-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1050px) { .menu-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+  /* ── CATEGORY CARD ── */
+  .cat {
+    background: var(--white);
+    border: 1px solid rgba(200,160,60,0.35);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+  .cat-head { display: flex; gap: 0.4rem; align-items: center; }
+  .cat-head .cat-title { flex: 1; min-width: 0; }
+  .cat-meta {
+    display: flex; gap: 0.4rem; align-items: center;
+    font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--brown-mid);
+  }
+  .cat-meta input { flex: 1; min-width: 0; }
+
+  /* ── INPUTS ── */
+  input[type=text] {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom: 1px dashed rgba(180,130,40,0.45);
+    border-radius: 4px;
+    padding: 0.2em 0.35em;
+    width: 100%;
+    min-width: 0;
+  }
+  input[type=text]:hover { border-color: rgba(180,130,40,0.35); }
+  input[type=text]:focus {
+    outline: none;
+    border-color: var(--amber-light);
+    background: var(--cream);
+  }
+  input::placeholder { color: var(--brown-mid); opacity: 0.4; font-style: italic; }
+
+  .cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+  }
+  .mono { font-family: 'DM Mono', monospace; font-size: 0.78rem; }
+
+  /* ── ITEM ── */
+  .item {
+    border-top: 1px dotted rgba(180,130,40,0.35);
+    padding-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem 0.4rem;
+    align-items: start;
+  }
+  .item-fields { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+  .item-row { display: flex; gap: 0.4rem; align-items: center; }
+  .item-name { font-size: 1.12rem; font-weight: 500; }
+  .item-note, .item-sub { font-size: 0.95rem; font-style: italic; color: var(--brown-mid); }
+  .item-price {
+    width: 5.5em !important;
+    flex-shrink: 0;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--white) !important;
+    background: var(--amber-deep) !important;
+    border-radius: 20px !important;
+    border: 1.5px solid var(--amber-deep) !important;
+  }
+  .item-price::placeholder { color: var(--white); opacity: 0.7; }
+  .item-price:focus { background: var(--amber) !important; }
+
+  /* ── BUTTONS ── */
+  .controls { display: flex; flex-direction: column; gap: 0.15rem; }
+  .cat-head .controls, .cat-foot { flex-direction: row; }
+  button {
+    font-family: 'DM Mono', monospace;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  .icon-btn {
+    width: 1.7rem; height: 1.7rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(180,130,40,0.35);
+    color: var(--brown-mid);
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+  .icon-btn:hover:not(:disabled) { background: var(--cream-warm); }
+  .icon-btn:disabled { opacity: 0.25; cursor: default; }
+  .icon-btn.del:hover:not(:disabled) { background: var(--danger); color: var(--white); border-color: var(--danger); }
+  .icon-btn:focus-visible, .add-btn:focus-visible, .download-btn:focus-visible {
+    outline: 2px solid var(--amber-deep); outline-offset: 2px;
+  }
+
+  .add-btn {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px dashed var(--amber-light);
+    color: var(--amber-deep);
+    padding: 0.35em 0.8em;
+    font-size: 0.78rem;
+  }
+  .add-btn:hover { background: var(--cream-warm); }
+  .add-cat {
+    min-height: 8rem;
+    align-self: stretch;
+    width: 100%;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown-mid);
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+
+  /* ── DOWNLOAD BAR ── */
+  .actions {
+    max-width: 1100px;
+    margin: 2.5rem auto 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  .download-btn {
+    background: var(--brown-dark);
+    color: var(--amber-pale);
+    border: none;
+    border-radius: 999px;
+    padding: 0.9em 2.2em;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 18px rgba(58,31,0,0.2);
+  }
+  .download-btn:hover { background: var(--brown-mid); }
+  .status { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--brown-mid); min-height: 1.2em; }
+  .status.error { color: var(--danger); }
+</style>
+</head>
+<body>
+
+<section class="menu-wrapper">
+  <div class="menu-intro">
+    <h2>Editar Ementa</h2>
+    <p>Altere os campos e use as setas para reordenar.<br>No fim, descarregue o novo <b>menu.json</b>. Deixe o preço vazio para mostrar “????€”.</p>
+  </div>
+
+  <div class="menu-grid" id="menu-grid"></div>
+
+  <div class="actions">
+    <button type="button" class="download-btn" id="download">Descarregar menu.json</button>
+    <div class="status" id="status" role="status"></div>
+  </div>
+</section>
+
+<script>
+  let data = null;
+  let dirty = false;
+
+  const grid = document.getElementById('menu-grid');
+  const statusEl = document.getElementById('status');
+
+  // Key order used when writing the JSON, so the output matches the current file layout.
+  const CAT_KEYS  = ['id', 'title', 'type', 'couvertItems', 'items', 'perPersonPrice', 'extra'];
+  const ITEM_KEYS = ['name', 'note', 'sub', 'price', 'tags'];
+
+  function setStatus(msg, isError) {
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('error', !!isError);
+  }
+
+  function markDirty() { dirty = true; setStatus(''); }
+
+  window.addEventListener('beforeunload', e => {
+    if (dirty) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  function slugify(s) {
+    return s.normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+
+  // ── small DOM helpers ──
+  function el(tag, props = {}, children = []) {
+    const n = document.createElement(tag);
+    Object.entries(props).forEach(([k, v]) => {
+      if (k === 'class') n.className = v;
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), v);
+      else if (k in n) n[k] = v;
+      else n.setAttribute(k, v);
+    });
+    children.forEach(c => n.append(c));
+    return n;
+  }
+
+  // Text input bound to obj[key]. Empty optional fields are removed from the object.
+  function field(obj, key, { cls = '', placeholder = '', optional = false, nullable = false, label = '', onChange } = {}) {
+    const val = obj[key];
+    return el('input', {
+      type: 'text',
+      class: cls,
+      value: val == null ? '' : val,
+      placeholder,
+      'aria-label': label || placeholder || key,
+      oninput: e => {
+        const v = e.target.value;
+        if (v.trim() === '') {
+          if (nullable) obj[key] = null;
+          else if (optional) delete obj[key];
+          else obj[key] = '';
+        } else {
+          obj[key] = v;
+        }
+        markDirty();
+        if (onChange) onChange(v);
+      }
+    });
+  }
+
+  function iconBtn(text, title, onClick, { disabled = false, del = false } = {}) {
+    return el('button', {
+      type: 'button',
+      class: 'icon-btn' + (del ? ' del' : ''),
+      title, 'aria-label': title, disabled,
+      onclick: onClick
+    }, [text]);
+  }
+
+  function move(arr, i, d) {
+    const j = i + d;
+    if (j < 0 || j >= arr.length) return;
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    markDirty();
+    render();
+  }
+
+  function remove(arr, i, what) {
+    if (!confirm(`Apagar ${what}?`)) return;
+    arr.splice(i, 1);
+    markDirty();
+    render();
+  }
+
+  // ── rendering ──
+  function renderItem(list, i, { couvert = false } = {}) {
+    const item = list[i];
+    const fields = el('div', { class: 'item-fields' }, [
+      el('div', { class: 'item-row' }, [
+        field(item, 'name', { cls: 'item-name', placeholder: 'Nome' }),
+        couvert ? '' : field(item, 'price', { cls: 'item-price', placeholder: '????€', nullable: true, label: 'Preço' })
+      ]),
+      field(item, 'note', { cls: 'item-note', placeholder: 'nota (ex: 50cl)', optional: true, label: 'Nota' }),
+      field(item, 'sub', { cls: 'item-sub', placeholder: 'descrição (ex: região · castas)', optional: true, label: 'Descrição' })
+    ]);
+    const controls = el('div', { class: 'controls' }, [
+      iconBtn('▲', 'Subir item', () => move(list, i, -1), { disabled: i === 0 }),
+      iconBtn('▼', 'Descer item', () => move(list, i, 1), { disabled: i === list.length - 1 }),
+      iconBtn('✕', 'Apagar item', () => remove(list, i, `"${item.name || 'item'}"`), { del: true })
+    ]);
+    return el('div', { class: 'item' }, [fields, controls]);
+  }
+
+  function renderCategory(ci) {
+    const cats = data.categories;
+    const cat = cats[ci];
+    const isCouvert = cat.type === 'couvert';
+    const list = isCouvert ? (cat.couvertItems ||= []) : (cat.items ||= []);
+
+    // For new categories, keep the id in sync with the title until the id is edited by hand.
+    let idInput;
+    const titleInput = field(cat, 'title', {
+      cls: 'cat-title', placeholder: 'Título da categoria', label: 'Título',
+      onChange: v => {
+        if (cat._autoId) { cat.id = slugify(v); idInput.value = cat.id; }
+      }
+    });
+    idInput = field(cat, 'id', { cls: 'mono', placeholder: 'id', label: 'ID da categoria',
+      onChange: () => { delete cat._autoId; } });
+
+    const card = el('div', { class: 'cat' }, [
+      el('div', { class: 'cat-head' }, [
+        titleInput,
+        el('div', { class: 'controls' }, [
+          iconBtn('◀', 'Mover categoria para trás', () => move(cats, ci, -1), { disabled: ci === 0 }),
+          iconBtn('▶', 'Mover categoria para a frente', () => move(cats, ci, 1), { disabled: ci === cats.length - 1 }),
+          iconBtn('✕', 'Apagar categoria', () => remove(cats, ci, `a categoria "${cat.title || cat.id}" e todos os seus itens`), { del: true })
+        ])
+      ]),
+      el('div', { class: 'cat-meta' }, [el('span', { class: 'label' }, ['id']), idInput])
+    ]);
+
+    list.forEach((_, i) => card.append(renderItem(list, i, { couvert: isCouvert })));
+
+    card.append(el('button', {
+      type: 'button', class: 'add-btn',
+      onclick: () => { list.push(isCouvert ? { name: '' } : { name: '', price: null }); markDirty(); render(); focusLast(ci); }
+    }, ['+ adicionar item']));
+
+    if (isCouvert) {
+      card.append(el('div', { class: 'item-row' }, [
+        el('span', { class: 'label', style: 'flex:1' }, ['Preço por pessoa']),
+        field(cat, 'perPersonPrice', { cls: 'item-price', placeholder: '0€', label: 'Preço por pessoa' })
+      ]));
+      if (cat.extra) {
+        card.append(el('div', { class: 'item' }, [
+          el('div', { class: 'item-fields' }, [
+            el('span', { class: 'label' }, ['Extra']),
+            el('div', { class: 'item-row' }, [
+              field(cat.extra, 'name', { cls: 'item-name', placeholder: 'Nome' }),
+              field(cat.extra, 'price', { cls: 'item-price', placeholder: '0€', label: 'Preço' })
+            ])
+          ]),
+          el('div', { class: 'controls' }, [
+            iconBtn('✕', 'Apagar extra', () => { if (confirm('Apagar extra?')) { delete cat.extra; markDirty(); render(); } }, { del: true })
+          ])
+        ]));
+      }
+    }
+    return card;
+  }
+
+  function focusLast(ci) {
+    const card = grid.children[ci];
+    const names = card.querySelectorAll('.item .item-name');
+    if (names.length) names[names.length - 1].focus();
+  }
+
+  function render() {
+    const scrollY = window.scrollY;
+    grid.replaceChildren();
+    data.categories.forEach((_, ci) => grid.append(renderCategory(ci)));
+    grid.append(el('button', {
+      type: 'button', class: 'add-btn add-cat',
+      onclick: () => {
+        data.categories.push({ id: '', title: '', items: [], _autoId: true });
+        markDirty(); render();
+        grid.children[data.categories.length - 1].querySelector('.cat-title').focus();
+      }
+    }, ['+ adicionar categoria']));
+    window.scrollTo(0, scrollY);
+  }
+
+  // ── serialization ──
+  function ordered(obj, keys) {
+    const out = {};
+    keys.forEach(k => { if (k in obj) out[k] = obj[k]; });
+    Object.keys(obj).forEach(k => { if (!(k in out) && !k.startsWith('_')) out[k] = obj[k]; });
+    return out;
+  }
+
+  function cleanItem(item) {
+    const o = ordered(item, ITEM_KEYS);
+    o.name = (o.name || '').trim();
+    ['note', 'sub'].forEach(k => {
+      if (k in o) { o[k] = String(o[k]).trim(); if (!o[k]) delete o[k]; }
+    });
+    if (typeof o.price === 'string') o.price = o.price.trim() || null;
+    return o;
+  }
+
+  function buildJson() {
+    const errors = [];
+    const ids = new Set();
+    const categories = data.categories.map((cat, ci) => {
+      const c = ordered(cat, CAT_KEYS);
+      c.title = (c.title || '').trim();
+      c.id = (c.id || '').trim() || slugify(c.title);
+      const label = c.title || `categoria ${ci + 1}`;
+      if (!c.title) errors.push(`Categoria ${ci + 1} não tem título.`);
+      if (!c.id) errors.push(`"${label}" não tem id.`);
+      else if (ids.has(c.id)) errors.push(`id repetido: "${c.id}".`);
+      ids.add(c.id);
+
+      const listKey = c.type === 'couvert' ? 'couvertItems' : 'items';
+      c[listKey] = (c[listKey] || []).map(cleanItem);
+      c[listKey].forEach((it, i) => { if (!it.name) errors.push(`"${label}": item ${i + 1} não tem nome.`); });
+      if (c.type === 'couvert' && typeof c.perPersonPrice === 'string') c.perPersonPrice = c.perPersonPrice.trim();
+      if (c.extra) c.extra = cleanItem(c.extra);
+      return c;
+    });
+    return { json: ordered({ ...data, categories }, ['categories']), errors };
+  }
+
+  document.getElementById('download').addEventListener('click', () => {
+    const { json, errors } = buildJson();
+    if (errors.length) {
+      setStatus(errors.join(' '), true);
+      return;
+    }
+    const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
+    const a = el('a', { href: URL.createObjectURL(blob), download: 'menu.json' });
+    document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    dirty = false;
+    setStatus('menu.json descarregado. Substitua o ficheiro no projeto para publicar.');
+  });
+
+  fetch('menu.json', { cache: 'no-store' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(json => { data = json; data.categories ||= []; render(); })
+    .catch(err => setStatus('Não foi possível carregar menu.json (' + err.message + ').', true));
+</script>
+</body>
+</html>
