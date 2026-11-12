@@ -163,6 +163,15 @@
   .icon-btn:hover:not(:disabled) { background: var(--cream-warm); }
   .icon-btn:disabled { opacity: 0.25; cursor: default; }
   .icon-btn.del:hover:not(:disabled) { background: var(--danger); color: var(--white); border-color: var(--danger); }
+  .handle { cursor: grab; touch-action: none; font-size: 1rem; }
+  .items { display: flex; flex-direction: column; gap: 0.6rem; min-height: 1.5rem; }
+  .dragging {
+    opacity: 0.5;
+    outline: 2px dashed var(--amber-light);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  body.is-dragging, body.is-dragging * { user-select: none; cursor: grabbing !important; }
   .icon-btn:focus-visible, .add-btn:focus-visible, .download-btn:focus-visible {
     outline: 2px solid var(--amber-deep); outline-offset: 2px;
   }
@@ -226,7 +235,7 @@
 <section class="menu-wrapper">
   <div class="menu-intro">
     <h2>Editar Ementa</h2>
-    <p>Altere os campos e use as setas para reordenar.<br>No fim, descarregue o novo <b>menu.json</b>.</p>
+    <p>Altere os campos e arraste ⠿ para reordenar.<br>No fim, descarregue o novo <b>menu.json</b>.</p>
   </div>
 
   <div class="menu-grid" id="menu-grid"></div>
@@ -310,11 +319,98 @@
     }, [text]);
   }
 
+  // ── reordering ──
+  // Keyboard: arrow keys on a focused handle move the item/category by one.
   function move(arr, i, d) {
     const j = i + d;
     if (j < 0 || j >= arr.length) return;
     [arr[i], arr[j]] = [arr[j], arr[i]];
     markDirty();
+    render();
+    const node = [...grid.querySelectorAll('.cat, .item')].find(n => n._ref === arr[j]);
+    if (node) node.querySelector('.handle').focus();
+  }
+
+  function dragHandle(arr, i, title) {
+    return el('button', {
+      type: 'button',
+      class: 'icon-btn handle',
+      title,
+      'aria-label': title + ' (ou use as setas do teclado)',
+      onpointerdown: e => startDrag(e, e.currentTarget.closest(arr === data.categories ? '.cat' : '.item')),
+      onkeydown: e => {
+        const d = { ArrowUp: -1, ArrowLeft: -1, ArrowDown: 1, ArrowRight: 1 }[e.key];
+        if (!d) return;
+        e.preventDefault();
+        move(arr, i, d);
+      }
+    }, ['⠿']);
+  }
+
+  // Pointer-based drag and drop (works with mouse and touch). The DOM is reordered
+  // live while dragging; on release the data model is rebuilt from the DOM order.
+  function startDrag(e, node) {
+    if (e.button !== 0) return;
+    e.preventDefault();
+    const isCat = node.classList.contains('cat');
+    const kind = isCat ? null : node.parentElement.dataset.kind;
+    node.classList.add('dragging');
+    document.body.classList.add('is-dragging');
+
+    const onMove = ev => {
+      if (ev.clientY < 60) window.scrollBy(0, -15);
+      else if (ev.clientY > window.innerHeight - 60) window.scrollBy(0, 15);
+
+      const hit = document.elementFromPoint(ev.clientX, ev.clientY);
+      if (!hit) return;
+
+      if (isCat) {
+        const t = hit.closest('.cat');
+        if (!t || t === node) return;
+        const r = t.getBoundingClientRect();
+        const multiCol = getComputedStyle(grid).gridTemplateColumns.split(' ').length > 1;
+        const after = multiCol ? ev.clientX > r.left + r.width / 2 : ev.clientY > r.top + r.height / 2;
+        after ? t.after(node) : t.before(node);
+        return;
+      }
+
+      // Items: only between lists of the same kind (couvert items have no price).
+      const t = hit.closest('.items > .item');
+      if (t && t !== node && t.parentElement.dataset.kind === kind) {
+        const r = t.getBoundingClientRect();
+        ev.clientY > r.top + r.height / 2 ? t.after(node) : t.before(node);
+        return;
+      }
+      const box = hit.closest('.cat')?.querySelector('.items');
+      if (box && box !== node.parentElement && box.dataset.kind === kind && !box.children.length) {
+        box.append(node);
+      }
+    };
+
+    const onUp = () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('pointercancel', onUp);
+      node.classList.remove('dragging');
+      document.body.classList.remove('is-dragging');
+      syncFromDom();
+    };
+
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
+  }
+
+  function syncFromDom() {
+    const before = JSON.stringify(data.categories);
+    const cards = [...grid.querySelectorAll(':scope > .cat')];
+    const lists = cards.map(c => {
+      const box = c.querySelector('.items');
+      return [box._list, [...box.children].map(n => n._ref)];
+    });
+    data.categories.splice(0, data.categories.length, ...cards.map(c => c._ref));
+    lists.forEach(([list, items]) => list.splice(0, list.length, ...items));
+    if (JSON.stringify(data.categories) !== before) markDirty();
     render();
   }
 
@@ -337,11 +433,12 @@
       field(item, 'sub', { cls: 'item-sub', placeholder: 'descrição (ex: região · castas)', optional: true, label: 'Descrição' })
     ]);
     const controls = el('div', { class: 'controls' }, [
-      iconBtn('▲', 'Subir item', () => move(list, i, -1), { disabled: i === 0 }),
-      iconBtn('▼', 'Descer item', () => move(list, i, 1), { disabled: i === list.length - 1 }),
+      dragHandle(list, i, 'Arrastar item'),
       iconBtn('✕', 'Apagar item', () => remove(list, i, `"${item.name || 'item'}"`), { del: true })
     ]);
-    return el('div', { class: 'item' }, [fields, controls]);
+    const node = el('div', { class: 'item' }, [fields, controls]);
+    node._ref = item;
+    return node;
   }
 
   function renderCategory(ci) {
@@ -365,15 +462,18 @@
       el('div', { class: 'cat-head' }, [
         titleInput,
         el('div', { class: 'controls' }, [
-          iconBtn('◀', 'Mover categoria para trás', () => move(cats, ci, -1), { disabled: ci === 0 }),
-          iconBtn('▶', 'Mover categoria para a frente', () => move(cats, ci, 1), { disabled: ci === cats.length - 1 }),
+          dragHandle(cats, ci, 'Arrastar categoria'),
           iconBtn('✕', 'Apagar categoria', () => remove(cats, ci, `a categoria "${cat.title || cat.id}" e todos os seus itens`), { del: true })
         ])
       ]),
       el('div', { class: 'cat-meta' }, [el('span', { class: 'label' }, ['id']), idInput])
     ]);
 
-    list.forEach((_, i) => card.append(renderItem(list, i, { couvert: isCouvert })));
+    card._ref = cat;
+    const itemsBox = el('div', { class: 'items', 'data-kind': isCouvert ? 'couvert' : 'items' });
+    itemsBox._list = list;
+    list.forEach((_, i) => itemsBox.append(renderItem(list, i, { couvert: isCouvert })));
+    card.append(itemsBox);
 
     card.append(el('button', {
       type: 'button', class: 'add-btn',
@@ -405,7 +505,7 @@
 
   function focusLast(ci) {
     const card = grid.children[ci];
-    const names = card.querySelectorAll('.item .item-name');
+    const names = card.querySelectorAll('.items .item-name');
     if (names.length) names[names.length - 1].focus();
   }
 
