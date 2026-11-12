@@ -14,6 +14,7 @@ const MIME = {
   '.ico':  'image/x-icon',
   '.css':  'text/css',
   '.js':   'text/javascript',
+  '.txt':  'text/plain; charset=utf-8',
 };
 
 const server = http.createServer((req, res) => {
